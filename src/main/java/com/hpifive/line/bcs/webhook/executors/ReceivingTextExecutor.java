@@ -39,19 +39,19 @@ public class ReceivingTextExecutor implements EventExecutor {
 		try {
 			
 			/* Invoice checking procedure - check is the message match to invoice keyword? */
-			InvoiceEventService invoiceModel = ApplicationContextProvider.getApplicationContext().getBean(InvoiceEventService.class);
-			InvoiceMsg msgs = invoiceModel.onTextMsgReceived(this.msg);
-			if (msgs != null) {
-				return InvoiceMessageExecutor.builder().msg(msgs).build();
-			}
+//			InvoiceEventService invoiceModel = ApplicationContextProvider.getApplicationContext().getBean(InvoiceEventService.class);
+//			InvoiceMsg msgs = invoiceModel.onTextMsgReceived(this.msg);
+//			if (msgs != null) {
+//				return InvoiceMessageExecutor.builder().msg(msgs).build();
+//			}
 
 			/* Event checking procedure - check is the message match to event keyword? */
-			EventReceivingMsgHandlerMasterModelService model = ApplicationContextProvider.getApplicationContext().getBean(EventReceivingMsgHandlerMasterModelService.class);
-			EventRegisterMsg msg = model.onTextMsgReceived(this.msg.getUid(), this.msg.getText());
-			if (msg != null) {
-				msg.setReplyToken(this.msg.getReplyToken());
-				return new EventMessageExecutor(msg);
-			}
+//			EventReceivingMsgHandlerMasterModelService model = ApplicationContextProvider.getApplicationContext().getBean(EventReceivingMsgHandlerMasterModelService.class);
+//			EventRegisterMsg msg = model.onTextMsgReceived(this.msg.getUid(), this.msg.getText());
+//			if (msg != null) {
+//				msg.setReplyToken(this.msg.getReplyToken());
+//				return new EventMessageExecutor(msg);
+//			}
 
 			/* Dominos order checking procedure - check is the message match to order status checking keyword? */
 			CheckOrderStatusService checkOrderStatusModel = ApplicationContextProvider.getApplicationContext().getBean(CheckOrderStatusService.class);
