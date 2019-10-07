@@ -9,7 +9,6 @@
 .settings
 .springBeans
 .sts4-cache
-*.log
 
 ### IntelliJ IDEA ###
 .idea
@@ -27,4 +26,5 @@
 /.metadata/
 bin/
 upload/
-logs/
+file/image/invoice.jpg
+

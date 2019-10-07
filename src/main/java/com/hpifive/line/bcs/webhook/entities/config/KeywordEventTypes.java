@@ -1,0 +1,69 @@
+package com.hpifive.line.bcs.webhook.entities.config;
+
+public enum KeywordEventTypes {
+	//double check型活動
+	WAIT_CONFIRM_MESSAGE("WAIT_CONFIRM_MESSAGE"),
+	WAIT_CONFIRM("WAIT_CONFIRM"),
+	CONFIRM_CHECK("CONFIRM_CHECK"),
+	REJECT_CHECK("REJECT_CHECK"),
+	CONFIRM("CONFIRM"),
+	CONFIRM_TIMEOUT("CONFIRM_TIMEOUT"),
+	REJECT("REJECT"),
+	//TICKET 票卷訊息
+	TICKET("TICKET"),
+	//發票開始
+	INVOICE_START("INVOICE_START"),
+	INVOICE_UNQUALIFIED("INVOICE_UNQUALIFIED"),
+	INVOICE_NUM("INVOICE_NUM"),
+	INVOICE_RAND("INVOICE_RAND"),
+	INVOICE_TERM("INVOICE_TERM"),
+	INVOICE_FAKE("INVOICE_FAKE"),
+	INVOICE_UNVERIFIED("INVOICE_UNVERIFIED"),
+	INVOICE_FINISH("INVOICE_FINISH"),
+	INVOICE_DECODE_FAIL("INVOICE_DECODE_FAIL"),
+	INVOICE_DUPLICATE("INVOICE_DUPLICATE"),
+	INVOICE_NOT_IN_PERIOD("INVOICE_NOT_IN_PERIOD"),
+	//發票比對訊息
+	INVOICE_NOT_MATCH("INVOICE_NOT_MATCH"),
+	INVOICE_MATCH("INVOICE_MATCH"),
+	//發票結束
+	APPLY("APPLY"),
+	APPLY_AGREEMENT("APPLY_AGREEMENT"),
+	APPLY_EXTRA_AGREEMENT("APPLY_EXTRA_AGREEMENT"),
+	APPLIED("APPLIED"),
+	APPLY_INVALID("APPLY_INVALID"),
+	APPLY_AGREE("APPLY_AGREE"),
+	APPLY_DISAGREE("APPLY_DISAGREE"),
+	APPLY_COMPLETED("APPLY_COMPLETED"),
+	APPLY_COMPLETED_YES("APPLY_COMPLETED_YES"),
+	APPLY_COMPLETED_NO("APPLY_COMPLETED_NO"),
+	ERROR_N_TIME("ERROR_N_TIME"),
+	INVALID_PERIOD("INVALID_PERIOD"),
+	USER_INPUT_ERROR("USER_INPUT_ERROR"),
+	TIME_OUT("TIME_OUT"),
+	CUSTOMIZE_INPUT_ERROR("ERROR"),//	使用者自定義之錯誤
+	REGISTER_FLOW_RUNNING("REGISTER_FLOW_RUNNING");//	當使用者還在註冊流程時 給這個狀態
+	
+	private String value;
+	
+	private KeywordEventTypes(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+	
+	public static KeywordEventTypes fromString(String text) {
+	    for (KeywordEventTypes b : KeywordEventTypes.values()) {
+	      if (b.value.equalsIgnoreCase(text)) {
+	        return b;
+	      }
+	    }
+	    throw new IllegalArgumentException("No constant with text " + text + " found");
+	  }
+	
+}
+
+	

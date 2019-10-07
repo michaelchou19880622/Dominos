@@ -1,0 +1,21 @@
+package com.hpifive.line.bcs.webhook.entities.config;
+
+public enum MessageTemplateTypes {
+	
+	BUTTONS("buttons"),
+	CONFIRM("confirm");
+
+	private String value;
+	
+	private MessageTemplateTypes(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value;
+	}
+	
+}
+
+	
