@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hpifive.line.bcs.webhook</groupId>
-	<artifactId>CarreFour_BCS_AP</artifactId>
+	<artifactId>Dominos_BCS_AP</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>CarreFour_BCS_AP</name>
+	<name>Dominos_BCS_AP</name>
 	<description>WebHook For Ap</description>
 
 	<parent>
