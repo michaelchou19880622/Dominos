@@ -31,4 +31,7 @@ public interface LineUserRepository extends CrudRepository<LineUserEntity, Long>
 	
 	@Query(value="SELECT U FROM LineUserEntity U WHERE U.id NOT IN (SELECT distinct P.userId FROM EventPrizeDetailEntity P WHERE P.eventPrizeId = :prizeId)")
 	public Page<LineUserEntity> findUnUseUserBy(@Param("prizeId")Long prizeId, Pageable pageable);
+	
+	@Query(value="SELECT U.status FROM LineUserEntity U where U.uid = :uid")
+	public String findStatusByUid(@Param("uid") String uid);
 }

@@ -3,6 +3,8 @@ package com.hpifive.line.bcs.webhook.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.net.ssl.SSLEngineResult.Status;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.hpifive.line.bcs.webhook.dao.ReplyMsgDao;
+import com.hpifive.line.bcs.webhook.dao.UserDao;
 import com.hpifive.line.bcs.webhook.dao.UserLinkDao;
 import com.hpifive.line.bcs.webhook.entities.config.LineUserBindStatus;
 import com.hpifive.line.bcs.webhook.exception.DaoException;
@@ -21,8 +24,11 @@ public class ReceivingMsgHandlerMasterModelService {
 
 	private static final Logger logger = LoggerFactory.getLogger(ReceivingMsgHandlerMasterModelService.class);
 	
+//	@Autowired
+//	private UserLinkDao userLinkDao;
+	
 	@Autowired
-	private UserLinkDao userLinkDao;
+	private UserDao userDao;
 	
 	@Autowired
 	private ReplyMsgDao replyMsgDao;
@@ -31,7 +37,9 @@ public class ReceivingMsgHandlerMasterModelService {
 	private AutoReplyTrackingService autoReplyTrackingService;
 	
 	public LineUserBindStatus getStatusByUid(String uid) {
-		String status = this.userLinkDao.getUserLinkStatusByUid(uid);
+//		String status = this.userLinkDao.getUserLinkStatusByUid(uid);
+		String status = this.userDao.getStatusByUid(uid);
+		logger.info("使用者 {}, 狀態 {}", uid, status);
 		return LineUserBindStatus.BINDED.getValues().equals(status) ? LineUserBindStatus.BINDED : LineUserBindStatus.UNBINDED;
 	}
 	

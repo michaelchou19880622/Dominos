@@ -127,4 +127,7 @@ public class UserDao {
 		return PageExtension.getListFromPage(pages);
 	}
 	
+	public String getStatusByUid(String uid) {
+		return this.lineUserRepository.findStatusByUid(uid);
+	}
 }
