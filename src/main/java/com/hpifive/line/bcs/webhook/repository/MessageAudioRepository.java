@@ -2,8 +2,8 @@ package com.hpifive.line.bcs.webhook.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.hpifive.line.bcs.webhook.entities.MessageVideoEntity;
+import com.hpifive.line.bcs.webhook.entities.MessageAudioEntity;
 
-public interface MessageAudioRepository extends CrudRepository<MessageVideoEntity, Integer>{
+public interface MessageAudioRepository extends CrudRepository<MessageAudioEntity, Integer> {
 
 }
