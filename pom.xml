@@ -197,6 +197,14 @@
 		    <artifactId>commons-validator</artifactId>
 		    <version>1.6</version>
 		</dependency>
+
+		<!-- SQL Server -->
+		<!-- https://docs.microsoft.com/zh-tw/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15 -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>7.4.1.jre11</version>
+		</dependency>
 		
 	</dependencies>
 
