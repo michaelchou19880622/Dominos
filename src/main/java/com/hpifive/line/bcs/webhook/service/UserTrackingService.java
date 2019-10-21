@@ -37,13 +37,12 @@ public class UserTrackingService {
 	}
 	
 	public void trackByUidAndStatus(String uid, LineUserTrackSource status) {
-//		LineUserEntity entity = this.userDao.addUserByUidIfNotExist(uid);
-//		if (entity != null) {
-//			this.trackByUserIdAndStatus(entity.getId(), status);
-//		} else {
-//			logger.warn("無法追蹤 UserUUid {} ", uid);
-//		}
-		trackByUserIdAndStatus(9999L, status);
+		LineUserEntity entity = this.userDao.addUserByUidIfNotExist(uid);
+		if (entity != null) {
+			this.trackByUserIdAndStatus(entity.getId(), status);
+		} else {
+			logger.warn("無法追蹤 UserUUid {} ", uid);
+		}
 	}
 	
 	public void trackByUserIdAndStatus(Long userId, LineUserTrackSource status) {
