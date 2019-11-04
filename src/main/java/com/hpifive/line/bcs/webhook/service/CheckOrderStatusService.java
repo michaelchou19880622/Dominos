@@ -60,14 +60,20 @@ public class CheckOrderStatusService {
 		if (userEntity == null) {
 			return null;
 		}
+		
+		logger.info("userEntity.getUid() = " + userEntity.getUid());
+		logger.info("userEntity.getStatus() = " + userEntity.getStatus());
 
 		logger.info("msg.getText() = " + msg.getText());
 		if (!msg.getText().equals(CHECK_ORDER)) {
 			return null;
 		}
 		
+
+		logger.info("msg.getUid() = " + msg.getUid());
+		
 		// Call Dominos API to check order status
-		String payload = String.format("{\"uuid\": \"%s\"}", msg.getId());
+		String payload = String.format("{\"uuid\": \"%s\"}", msg.getUid());
 
 		StringEntity entity = new StringEntity(payload, ContentType.APPLICATION_JSON);
 
