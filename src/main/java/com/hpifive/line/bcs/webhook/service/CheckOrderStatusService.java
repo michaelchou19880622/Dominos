@@ -48,9 +48,10 @@ public class CheckOrderStatusService {
 			put("可外帶", "可以來外帶嘍");
 			put("外送中", "準備外送出門了");
 			put("訂單取消", "訂單已取消");
+			put("已完成", "訂單已領取");
 		}
 	};
-
+	
 	@Autowired
 	private UserDao userDao;
 
