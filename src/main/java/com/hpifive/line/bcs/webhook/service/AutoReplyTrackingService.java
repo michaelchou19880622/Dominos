@@ -1,5 +1,7 @@
 package com.hpifive.line.bcs.webhook.service;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,7 @@ public class AutoReplyTrackingService {
 	public void addMsgByUidAndStatusAndReplyId(String uid, LineUserBindStatus status, Long replyId) {
 		try {
 			UserClickEntity entity = new UserClickEntity();
+			entity.setCreateTime(new Date());
 			entity.setUserUid(uid);
 			entity.setStatus(status.toString());
 			entity.setType(UserClickType.AUTOREPLY.getValues());
