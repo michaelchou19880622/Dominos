@@ -35,7 +35,7 @@ public class UserClickEntity {
 	private Long mappingId;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="create_time", nullable=false, insertable=false, updatable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name="create_time", nullable=false, insertable=true, updatable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date createTime;
 
 	public Long getId() {
